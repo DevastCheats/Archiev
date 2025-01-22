@@ -1,0 +1,2300 @@
+(()=>{
+    const chrome = window.fx_chrome;
+
+    if (!globalThis.chrome)
+        globalThis.chrome = {};
+    if (!globalThis.chrome.runtime)
+        globalThis.chrome.runtime = {};
+    if (!globalThis.chrome.runtime.id) {
+        delete globalThis.chrome.runtime.id;
+        globalThis.chrome.runtime.id = 'foxified';
+    }
+    (function(a, b) {
+        if ("function" == typeof define && define.amd)
+            define("webextension-polyfill", ["module"], b);
+        else if ("undefined" != typeof exports)
+            b(module);
+        else {
+            var c = {
+                exports: {}
+            };
+            b(c),
+            a.browser = c.exports
+        }
+    }
+    )("undefined" == typeof globalThis ? "undefined" == typeof self ? this : self : globalThis, function(a) {
+        "use strict";
+        if ("undefined" == typeof browser || Object.getPrototypeOf(browser) !== Object.prototype) {
+            if ("object" != typeof chrome || !chrome || !chrome.runtime || !chrome.runtime.id)
+                throw new Error("This script should only be loaded in a browser extension.");
+            a.exports = (a=>{
+                const b = {
+                    alarms: {
+                        clear: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        clearAll: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        get: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        getAll: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        }
+                    },
+                    bookmarks: {
+                        create: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        get: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getChildren: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getRecent: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getSubTree: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getTree: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        move: {
+                            minArgs: 2,
+                            maxArgs: 2
+                        },
+                        remove: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        removeTree: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        search: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        update: {
+                            minArgs: 2,
+                            maxArgs: 2
+                        }
+                    },
+                    browserAction: {
+                        disable: {
+                            minArgs: 0,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        },
+                        enable: {
+                            minArgs: 0,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        },
+                        getBadgeBackgroundColor: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getBadgeText: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getPopup: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getTitle: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        openPopup: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        setBadgeBackgroundColor: {
+                            minArgs: 1,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        },
+                        setBadgeText: {
+                            minArgs: 1,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        },
+                        setIcon: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        setPopup: {
+                            minArgs: 1,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        },
+                        setTitle: {
+                            minArgs: 1,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        }
+                    },
+                    browsingData: {
+                        remove: {
+                            minArgs: 2,
+                            maxArgs: 2
+                        },
+                        removeCache: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        removeCookies: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        removeDownloads: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        removeFormData: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        removeHistory: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        removeLocalStorage: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        removePasswords: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        removePluginData: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        settings: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        }
+                    },
+                    commands: {
+                        getAll: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        }
+                    },
+                    contextMenus: {
+                        remove: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        removeAll: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        update: {
+                            minArgs: 2,
+                            maxArgs: 2
+                        }
+                    },
+                    cookies: {
+                        get: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getAll: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getAllCookieStores: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        remove: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        set: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        }
+                    },
+                    devtools: {
+                        inspectedWindow: {
+                            eval: {
+                                minArgs: 1,
+                                maxArgs: 2,
+                                singleCallbackArg: !1
+                            }
+                        },
+                        panels: {
+                            create: {
+                                minArgs: 3,
+                                maxArgs: 3,
+                                singleCallbackArg: !0
+                            }
+                        }
+                    },
+                    downloads: {
+                        cancel: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        download: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        erase: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getFileIcon: {
+                            minArgs: 1,
+                            maxArgs: 2
+                        },
+                        open: {
+                            minArgs: 1,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        },
+                        pause: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        removeFile: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        resume: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        search: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        show: {
+                            minArgs: 1,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        }
+                    },
+                    extension: {
+                        isAllowedFileSchemeAccess: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        isAllowedIncognitoAccess: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        }
+                    },
+                    history: {
+                        addUrl: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        deleteAll: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        deleteRange: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        deleteUrl: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getVisits: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        search: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        }
+                    },
+                    i18n: {
+                        detectLanguage: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getAcceptLanguages: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        }
+                    },
+                    identity: {
+                        launchWebAuthFlow: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        }
+                    },
+                    idle: {
+                        queryState: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        }
+                    },
+                    management: {
+                        get: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getAll: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        getSelf: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        setEnabled: {
+                            minArgs: 2,
+                            maxArgs: 2
+                        },
+                        uninstallSelf: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        }
+                    },
+                    notifications: {
+                        clear: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        create: {
+                            minArgs: 1,
+                            maxArgs: 2
+                        },
+                        getAll: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        getPermissionLevel: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        update: {
+                            minArgs: 2,
+                            maxArgs: 2
+                        }
+                    },
+                    pageAction: {
+                        getPopup: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getTitle: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        hide: {
+                            minArgs: 1,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        },
+                        setIcon: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        setPopup: {
+                            minArgs: 1,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        },
+                        setTitle: {
+                            minArgs: 1,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        },
+                        show: {
+                            minArgs: 1,
+                            maxArgs: 1,
+                            fallbackToNoCallback: !0
+                        }
+                    },
+                    permissions: {
+                        contains: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getAll: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        remove: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        request: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        }
+                    },
+                    runtime: {
+                        getBackgroundPage: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        getPlatformInfo: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        openOptionsPage: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        requestUpdateCheck: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        sendMessage: {
+                            minArgs: 1,
+                            maxArgs: 3
+                        },
+                        sendNativeMessage: {
+                            minArgs: 2,
+                            maxArgs: 2
+                        },
+                        setUninstallURL: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        }
+                    },
+                    sessions: {
+                        getDevices: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        getRecentlyClosed: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        restore: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        }
+                    },
+                    storage: {
+                        local: {
+                            clear: {
+                                minArgs: 0,
+                                maxArgs: 0
+                            },
+                            get: {
+                                minArgs: 0,
+                                maxArgs: 1
+                            },
+                            getBytesInUse: {
+                                minArgs: 0,
+                                maxArgs: 1
+                            },
+                            remove: {
+                                minArgs: 1,
+                                maxArgs: 1
+                            },
+                            set: {
+                                minArgs: 1,
+                                maxArgs: 1
+                            }
+                        },
+                        managed: {
+                            get: {
+                                minArgs: 0,
+                                maxArgs: 1
+                            },
+                            getBytesInUse: {
+                                minArgs: 0,
+                                maxArgs: 1
+                            }
+                        },
+                        sync: {
+                            clear: {
+                                minArgs: 0,
+                                maxArgs: 0
+                            },
+                            get: {
+                                minArgs: 0,
+                                maxArgs: 1
+                            },
+                            getBytesInUse: {
+                                minArgs: 0,
+                                maxArgs: 1
+                            },
+                            remove: {
+                                minArgs: 1,
+                                maxArgs: 1
+                            },
+                            set: {
+                                minArgs: 1,
+                                maxArgs: 1
+                            }
+                        }
+                    },
+                    tabs: {
+                        captureVisibleTab: {
+                            minArgs: 0,
+                            maxArgs: 2
+                        },
+                        create: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        detectLanguage: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        discard: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        duplicate: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        executeScript: {
+                            minArgs: 1,
+                            maxArgs: 2
+                        },
+                        get: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getCurrent: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        },
+                        getZoom: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        getZoomSettings: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        highlight: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        insertCSS: {
+                            minArgs: 1,
+                            maxArgs: 2
+                        },
+                        move: {
+                            minArgs: 2,
+                            maxArgs: 2
+                        },
+                        query: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        reload: {
+                            minArgs: 0,
+                            maxArgs: 2
+                        },
+                        remove: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        removeCSS: {
+                            minArgs: 1,
+                            maxArgs: 2
+                        },
+                        sendMessage: {
+                            minArgs: 2,
+                            maxArgs: 3
+                        },
+                        setZoom: {
+                            minArgs: 1,
+                            maxArgs: 2
+                        },
+                        setZoomSettings: {
+                            minArgs: 1,
+                            maxArgs: 2
+                        },
+                        update: {
+                            minArgs: 1,
+                            maxArgs: 2
+                        }
+                    },
+                    topSites: {
+                        get: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        }
+                    },
+                    webNavigation: {
+                        getAllFrames: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        getFrame: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        }
+                    },
+                    webRequest: {
+                        handlerBehaviorChanged: {
+                            minArgs: 0,
+                            maxArgs: 0
+                        }
+                    },
+                    windows: {
+                        create: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        get: {
+                            minArgs: 1,
+                            maxArgs: 2
+                        },
+                        getAll: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        getCurrent: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        getLastFocused: {
+                            minArgs: 0,
+                            maxArgs: 1
+                        },
+                        remove: {
+                            minArgs: 1,
+                            maxArgs: 1
+                        },
+                        update: {
+                            minArgs: 2,
+                            maxArgs: 2
+                        }
+                    }
+                };
+                if (0 === Object.keys(b).length)
+                    throw new Error("api-metadata.json has not been included in browser-polyfill");
+                class c extends WeakMap {
+                    constructor(a, b=void 0) {
+                        super(b),
+                        this.createItem = a
+                    }
+                    get(a) {
+                        return this.has(a) || this.set(a, this.createItem(a)),
+                        super.get(a)
+                    }
+                }
+                const d = a=>a && "object" == typeof a && "function" == typeof a.then
+                  , e = (b,c)=>(...d)=>{
+                    a.runtime.lastError ? b.reject(a.runtime.lastError) : c.singleCallbackArg || 1 >= d.length && !1 !== c.singleCallbackArg ? b.resolve(d[0]) : b.resolve(d)
+                }
+                  , f = a=>1 == a ? "argument" : "arguments"
+                  , g = (a,b)=>function(c, ...d) {
+                    if (d.length < b.minArgs)
+                        throw new Error(`Expected at least ${b.minArgs} ${f(b.minArgs)} for ${a}(), got ${d.length}`);
+                    if (d.length > b.maxArgs)
+                        throw new Error(`Expected at most ${b.maxArgs} ${f(b.maxArgs)} for ${a}(), got ${d.length}`);
+                    return new Promise((f,g)=>{
+                        if (b.fallbackToNoCallback)
+                            try {
+                                c[a](...d, e({
+                                    resolve: f,
+                                    reject: g
+                                }, b))
+                            } catch (e) {
+                                console.warn(`${a} API method doesn't seem to support the callback parameter, ` + "falling back to call it without a callback: ", e),
+                                c[a](...d),
+                                b.fallbackToNoCallback = !1,
+                                b.noCallback = !0,
+                                f()
+                            }
+                        else
+                            b.noCallback ? (c[a](...d),
+                            f()) : c[a](...d, e({
+                                resolve: f,
+                                reject: g
+                            }, b))
+                    }
+                    )
+                }
+                  , h = (a,b,c)=>new Proxy(b,{
+                    apply(b, d, e) {
+                        return c.call(d, a, ...e)
+                    }
+                });
+                let i = Function.call.bind(Object.prototype.hasOwnProperty);
+                const j = (a,b={},c={})=>{
+                    let d = Object.create(null)
+                      , e = {
+                        has(b, c) {
+                            return c in a || c in d
+                        },
+                        get(e, f, k) {
+                            if (f in d)
+                                return d[f];
+                            if (!(f in a))
+                                return;
+                            let l = a[f];
+                            if ("function" == typeof l) {
+                                if ("function" == typeof b[f])
+                                    l = h(a, a[f], b[f]);
+                                else if (i(c, f)) {
+                                    let b = g(f, c[f]);
+                                    l = h(a, a[f], b)
+                                } else
+                                    l = l.bind(a);
+                            } else if ("object" == typeof l && null !== l && (i(b, f) || i(c, f)))
+                                l = j(l, b[f], c[f]);
+                            else if (i(c, "*"))
+                                l = j(l, b[f], c["*"]);
+                            else
+                                return Object.defineProperty(d, f, {
+                                    configurable: !0,
+                                    enumerable: !0,
+                                    get() {
+                                        return a[f]
+                                    },
+                                    set(b) {
+                                        a[f] = b
+                                    }
+                                }),
+                                l;
+                            return d[f] = l,
+                            l
+                        },
+                        set(b, c, e, f) {
+                            return c in d ? d[c] = e : a[c] = e,
+                            !0
+                        },
+                        defineProperty(a, b, c) {
+                            return Reflect.defineProperty(d, b, c)
+                        },
+                        deleteProperty(a, b) {
+                            return Reflect.deleteProperty(d, b)
+                        }
+                    }
+                      , f = Object.create(a);
+                    return new Proxy(f,e)
+                }
+                  , k = a=>({
+                    addListener(b, c, ...d) {
+                        b.addListener(a.get(c), ...d)
+                    },
+                    hasListener(b, c) {
+                        return b.hasListener(a.get(c))
+                    },
+                    removeListener(b, c) {
+                        b.removeListener(a.get(c))
+                    }
+                });
+                let l = !1;
+                const m = new c(a=>"function" == typeof a ? function(b, c, e) {
+                    let f, g, h = !1, i = new Promise(a=>{
+                        f = function(b) {
+                            l || (console.warn("Returning a Promise is the preferred way to send a reply from an onMessage/onMessageExternal listener, as the sendResponse will be removed from the specs (See https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage)", new Error().stack),
+                            l = !0),
+                            h = !0,
+                            a(b)
+                        }
+                    }
+                    );
+                    try {
+                        g = a(b, c, f)
+                    } catch (a) {
+                        g = Promise.reject(a)
+                    }
+                    const j = !0 !== g && d(g);
+                    if (!0 !== g && !j && !h)
+                        return !1;
+                    const k = a=>{
+                        a.then(a=>{
+                            e(a)
+                        }
+                        , a=>{
+                            let b;
+                            b = a && (a instanceof Error || "string" == typeof a.message) ? a.message : "An unexpected error occurred",
+                            e({
+                                __mozWebExtensionPolyfillReject__: !0,
+                                message: b
+                            })
+                        }
+                        ).catch(a=>{
+                            console.error("Failed to send onMessage rejected reply", a)
+                        }
+                        )
+                    }
+                    ;
+                    return j ? k(g) : k(i),
+                    !0
+                }
+                : a)
+                  , n = ({reject: b, resolve: c},d)=>{
+                    a.runtime.lastError ? a.runtime.lastError.message === "The message port closed before a response was received." ? c() : b(a.runtime.lastError) : d && d.__mozWebExtensionPolyfillReject__ ? b(new Error(d.message)) : c(d)
+                }
+                  , o = (a,b,c,...d)=>{
+                    if (d.length < b.minArgs)
+                        throw new Error(`Expected at least ${b.minArgs} ${f(b.minArgs)} for ${a}(), got ${d.length}`);
+                    if (d.length > b.maxArgs)
+                        throw new Error(`Expected at most ${b.maxArgs} ${f(b.maxArgs)} for ${a}(), got ${d.length}`);
+                    return new Promise((a,b)=>{
+                        const e = n.bind(null, {
+                            resolve: a,
+                            reject: b
+                        });
+                        d.push(e),
+                        c.sendMessage(...d)
+                    }
+                    )
+                }
+                  , p = {
+                    runtime: {
+                        onMessage: k(m),
+                        onMessageExternal: k(m),
+                        sendMessage: o.bind(null, "sendMessage", {
+                            minArgs: 1,
+                            maxArgs: 3
+                        })
+                    },
+                    tabs: {
+                        sendMessage: o.bind(null, "sendMessage", {
+                            minArgs: 2,
+                            maxArgs: 3
+                        })
+                    }
+                }
+                  , q = {
+                    clear: {
+                        minArgs: 1,
+                        maxArgs: 1
+                    },
+                    get: {
+                        minArgs: 1,
+                        maxArgs: 1
+                    },
+                    set: {
+                        minArgs: 1,
+                        maxArgs: 1
+                    }
+                };
+                return b.privacy = {
+                    network: {
+                        "*": q
+                    },
+                    services: {
+                        "*": q
+                    },
+                    websites: {
+                        "*": q
+                    }
+                },
+                j(a, p, b)
+            }
+            )(chrome)
+        } else
+            a.exports = browser
+    });
+    (()=>{
+        "use strict";
+        var e = {
+            5769: (e,s,r)=>{
+                var n = r(4858);
+                class t {
+                    constructor(e, s, r) {
+                        this.namespace = e,
+                        this.defaultValues = r,
+                        this.singlePropertyChangeListeners = {},
+                        this.compositePropertiesChangeListeners = [],
+                        this.storageArea = n.lib.browser.storage[s],
+                        this.data = Object.assign({}, r),
+                        this.properties = Object.keys(this.data),
+                        this.propertiesToStorageKeysMap = this.properties.reduce(((e,s)=>(e[s] = `${this.namespace}:${s}`,
+                        e)), {}),
+                        this.storageKeysToPropertiesMap = this.properties.reduce(((e,s)=>(e[`${this.namespace}:${s}`] = s,
+                        e)), {}),
+                        this.properties.forEach((e=>{
+                            Object.defineProperty(this, e, {
+                                get() {
+                                    return this.data[e]
+                                }
+                            })
+                        }
+                        )),
+                        this.Ready = new Promise((e=>{
+                            const s = Object.keys(this.storageKeysToPropertiesMap);
+                            this.storageArea.get(s).then((s=>{
+                                Object.keys(s).forEach((e=>{
+                                    this.data[this.storageKeysToPropertiesMap[e]] = s[e]
+                                }
+                                )),
+                                e()
+                            }
+                            ))
+                        }
+                        )),
+                        n.lib.browser.storage.onChanged.addListener(((e,n)=>{
+                            if (n !== s)
+                                return;
+                            const t = {};
+                            Object.keys(e).forEach((s=>{
+                                var n;
+                                const o = this.storageKeysToPropertiesMap[s];
+                                if (void 0 === o)
+                                    return;
+                                const i = void 0 !== e[s].oldValue ? e[s].oldValue : r[o]
+                                  , a = void 0 !== e[s].newValue ? e[s].newValue : r[o];
+                                this.data[o] = a,
+                                t[o] = {
+                                    newValue: a,
+                                    oldValue: i
+                                },
+                                this.singlePropertyChangeListeners[o] && (null === (n = this.singlePropertyChangeListeners[o]) || void 0 === n || n.forEach((e=>{
+                                    e(a, i)
+                                }
+                                )))
+                            }
+                            )),
+                            this.compositePropertiesChangeListeners.forEach((({properties: e, listener: s})=>{
+                                s(e.reduce(((e,s)=>(void 0 !== t[s] && (e[s] = t[s]),
+                                e)), {}))
+                            }
+                            ))
+                        }
+                        ))
+                    }
+                    set(e, s) {
+                        const r = {};
+                        if ("string" == typeof e && void 0 !== s)
+                            this.data[e] = s,
+                            r[this.propertiesToStorageKeysMap[e]] = s;
+                        else {
+                            const s = e;
+                            Object.keys(s).forEach((e=>{
+                                const n = s[e];
+                                this.data[e] = n,
+                                r[this.propertiesToStorageKeysMap[e]] = n
+                            }
+                            ))
+                        }
+                        return this.storageArea.set(r)
+                    }
+                    reset() {
+                        this.set(this.defaultValues)
+                    }
+                    onChange(e, s) {
+                        var r;
+                        null === e ? this.compositePropertiesChangeListeners.push({
+                            properties: this.properties,
+                            listener: s
+                        }) : Array.isArray(e) ? this.compositePropertiesChangeListeners.push({
+                            properties: e,
+                            listener: s
+                        }) : (void 0 === this.singlePropertyChangeListeners[e] && (this.singlePropertyChangeListeners[e] = []),
+                        null === (r = this.singlePropertyChangeListeners[e]) || void 0 === r || r.push(s))
+                    }
+                }
+                const o = new n.Logger("Window Communication");
+                s.Options = (e,s,r)=>new t(e,s,r),
+                s.WindowCommunication = class {
+                    constructor(e=window) {
+                        this.targetWindow = e,
+                        this.listeners = {},
+                        this.responseQueue = new Map,
+                        o.debug("Registering window message listener."),
+                        window.addEventListener("message", (e=>{
+                            if (void 0 === e.data.type || "WindowCommunicationMessage" !== e.data.type)
+                                return;
+                            const {id: s, name: r, data: n} = e.data;
+                            if (null === s && "__RESPONSE__" === r) {
+                                const {responseFor: s} = e.data;
+                                if (void 0 === s)
+                                    return;
+                                const r = this.responseQueue.get(s);
+                                return o.info(`Response received for message id "${s}".`, {
+                                    data: n
+                                }),
+                                void (void 0 !== r && (r(n),
+                                this.responseQueue.delete(s)))
+                            }
+                            if (void 0 === this.listeners[r])
+                                o.warn(`Message listener for name "${r}" does not exist.`);
+                            else {
+                                o.info(`Message received with name "${r}".`, {
+                                    data: n
+                                });
+                                const e = (0,
+                                this.listeners[r])(n);
+                                this.sendResponse(s, e)
+                            }
+                        }
+                        ))
+                    }
+                    on(e, s) {
+                        "function" == typeof this.listeners[e] && o.warn(`Listener for message name "${e}" already exists, It will be replaced.`),
+                        this.listeners[e] = s,
+                        o.info(`Listener for message name "${e}" added.`)
+                    }
+                    send(e, s) {
+                        const r = `message-${Date.now()}-${Math.round(1e5 * Math.random())}`;
+                        return o.info(`Sending message with name "${e}" and id "${r}".`, {
+                            data: s
+                        }),
+                        this.targetWindow.postMessage({
+                            type: "WindowCommunicationMessage",
+                            id: r,
+                            name: e,
+                            data: s
+                        }, "*"),
+                        new Promise((e=>{
+                            this.responseQueue.set(r, e)
+                        }
+                        ))
+                    }
+                    sendResponse(e, s) {
+                        Promise.resolve(s).then((s=>{
+                            this.targetWindow.postMessage({
+                                type: "WindowCommunicationMessage",
+                                id: null,
+                                name: "__RESPONSE__",
+                                data: s,
+                                responseFor: e
+                            }, "*")
+                        }
+                        ))
+                    }
+                }
+            }
+            ,
+            4858: (e,s,r)=>{
+                var n, t = "undefined" != typeof globalThis ? globalThis : "undefined" != typeof window ? window : void 0 !== r.g ? r.g : "undefined" != typeof self ? self : {};
+                function o(e) {
+                    var s = {
+                        exports: {}
+                    };
+                    return e(s, s.exports),
+                    s.exports
+                }
+                !function(e) {
+                    e[e.DEBUG = 0] = "DEBUG",
+                    e[e.INFO = 1] = "INFO",
+                    e[e.WARNING = 2] = "WARNING",
+                    e[e.ERROR = 3] = "ERROR"
+                }(n || (n = {}));
+                const i = {
+                    debug: {
+                        icon: "-",
+                        iconColor: "#666",
+                        textStyle: "color: #666"
+                    },
+                    info: {
+                        icon: "ℹ",
+                        iconColor: "#1e88e5",
+                        textStyle: "color: #333"
+                    },
+                    success: {
+                        icon: "✔",
+                        iconColor: "#43A047",
+                        textStyle: "color: #333"
+                    },
+                    warn: {
+                        icon: "⚠",
+                        iconColor: "#f9a825",
+                        textStyle: "color: #fff; font-weight: bold; background-color: #F9A825; padding: 0.125rem 0.5rem"
+                    },
+                    error: {
+                        icon: "✖",
+                        iconColor: "#e57373",
+                        textStyle: "color: #fff; font-weight: bold; background-color: #e57373; padding: 0.125rem 0.5rem"
+                    }
+                }
+                  , a = {
+                    debug: n.DEBUG,
+                    info: n.INFO,
+                    warning: n.WARNING,
+                    error: n.ERROR
+                };
+                var g = o((function(e, s) {
+                    "undefined" != typeof globalThis ? globalThis : "undefined" != typeof self && self,
+                    function(e) {
+                        if ("undefined" == typeof browser || Object.getPrototypeOf(browser) !== Object.prototype) {
+                            const s = "The message port closed before a response was received."
+                              , r = "Returning a Promise is the preferred way to send a reply from an onMessage/onMessageExternal listener, as the sendResponse will be removed from the specs (See https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage)"
+                              , n = e=>{
+                                const n = {
+                                    alarms: {
+                                        clear: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        clearAll: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        get: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        getAll: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        }
+                                    },
+                                    bookmarks: {
+                                        create: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        get: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getChildren: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getRecent: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getSubTree: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getTree: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        move: {
+                                            minArgs: 2,
+                                            maxArgs: 2
+                                        },
+                                        remove: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        removeTree: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        search: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        update: {
+                                            minArgs: 2,
+                                            maxArgs: 2
+                                        }
+                                    },
+                                    browserAction: {
+                                        disable: {
+                                            minArgs: 0,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        },
+                                        enable: {
+                                            minArgs: 0,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        },
+                                        getBadgeBackgroundColor: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getBadgeText: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getPopup: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getTitle: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        openPopup: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        setBadgeBackgroundColor: {
+                                            minArgs: 1,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        },
+                                        setBadgeText: {
+                                            minArgs: 1,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        },
+                                        setIcon: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        setPopup: {
+                                            minArgs: 1,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        },
+                                        setTitle: {
+                                            minArgs: 1,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        }
+                                    },
+                                    browsingData: {
+                                        remove: {
+                                            minArgs: 2,
+                                            maxArgs: 2
+                                        },
+                                        removeCache: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        removeCookies: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        removeDownloads: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        removeFormData: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        removeHistory: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        removeLocalStorage: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        removePasswords: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        removePluginData: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        settings: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        }
+                                    },
+                                    commands: {
+                                        getAll: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        }
+                                    },
+                                    contextMenus: {
+                                        remove: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        removeAll: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        update: {
+                                            minArgs: 2,
+                                            maxArgs: 2
+                                        }
+                                    },
+                                    cookies: {
+                                        get: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getAll: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getAllCookieStores: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        remove: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        set: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        }
+                                    },
+                                    devtools: {
+                                        inspectedWindow: {
+                                            eval: {
+                                                minArgs: 1,
+                                                maxArgs: 2,
+                                                singleCallbackArg: !1
+                                            }
+                                        },
+                                        panels: {
+                                            create: {
+                                                minArgs: 3,
+                                                maxArgs: 3,
+                                                singleCallbackArg: !0
+                                            },
+                                            elements: {
+                                                createSidebarPane: {
+                                                    minArgs: 1,
+                                                    maxArgs: 1
+                                                }
+                                            }
+                                        }
+                                    },
+                                    downloads: {
+                                        cancel: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        download: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        erase: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getFileIcon: {
+                                            minArgs: 1,
+                                            maxArgs: 2
+                                        },
+                                        open: {
+                                            minArgs: 1,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        },
+                                        pause: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        removeFile: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        resume: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        search: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        show: {
+                                            minArgs: 1,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        }
+                                    },
+                                    extension: {
+                                        isAllowedFileSchemeAccess: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        isAllowedIncognitoAccess: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        }
+                                    },
+                                    history: {
+                                        addUrl: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        deleteAll: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        deleteRange: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        deleteUrl: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getVisits: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        search: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        }
+                                    },
+                                    i18n: {
+                                        detectLanguage: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getAcceptLanguages: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        }
+                                    },
+                                    identity: {
+                                        launchWebAuthFlow: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        }
+                                    },
+                                    idle: {
+                                        queryState: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        }
+                                    },
+                                    management: {
+                                        get: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getAll: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        getSelf: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        setEnabled: {
+                                            minArgs: 2,
+                                            maxArgs: 2
+                                        },
+                                        uninstallSelf: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        }
+                                    },
+                                    notifications: {
+                                        clear: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        create: {
+                                            minArgs: 1,
+                                            maxArgs: 2
+                                        },
+                                        getAll: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        getPermissionLevel: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        update: {
+                                            minArgs: 2,
+                                            maxArgs: 2
+                                        }
+                                    },
+                                    pageAction: {
+                                        getPopup: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getTitle: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        hide: {
+                                            minArgs: 1,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        },
+                                        setIcon: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        setPopup: {
+                                            minArgs: 1,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        },
+                                        setTitle: {
+                                            minArgs: 1,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        },
+                                        show: {
+                                            minArgs: 1,
+                                            maxArgs: 1,
+                                            fallbackToNoCallback: !0
+                                        }
+                                    },
+                                    permissions: {
+                                        contains: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getAll: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        remove: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        request: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        }
+                                    },
+                                    runtime: {
+                                        getBackgroundPage: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        getPlatformInfo: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        openOptionsPage: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        requestUpdateCheck: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        sendMessage: {
+                                            minArgs: 1,
+                                            maxArgs: 3
+                                        },
+                                        sendNativeMessage: {
+                                            minArgs: 2,
+                                            maxArgs: 2
+                                        },
+                                        setUninstallURL: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        }
+                                    },
+                                    sessions: {
+                                        getDevices: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        getRecentlyClosed: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        restore: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        }
+                                    },
+                                    storage: {
+                                        local: {
+                                            clear: {
+                                                minArgs: 0,
+                                                maxArgs: 0
+                                            },
+                                            get: {
+                                                minArgs: 0,
+                                                maxArgs: 1
+                                            },
+                                            getBytesInUse: {
+                                                minArgs: 0,
+                                                maxArgs: 1
+                                            },
+                                            remove: {
+                                                minArgs: 1,
+                                                maxArgs: 1
+                                            },
+                                            set: {
+                                                minArgs: 1,
+                                                maxArgs: 1
+                                            }
+                                        },
+                                        managed: {
+                                            get: {
+                                                minArgs: 0,
+                                                maxArgs: 1
+                                            },
+                                            getBytesInUse: {
+                                                minArgs: 0,
+                                                maxArgs: 1
+                                            }
+                                        },
+                                        sync: {
+                                            clear: {
+                                                minArgs: 0,
+                                                maxArgs: 0
+                                            },
+                                            get: {
+                                                minArgs: 0,
+                                                maxArgs: 1
+                                            },
+                                            getBytesInUse: {
+                                                minArgs: 0,
+                                                maxArgs: 1
+                                            },
+                                            remove: {
+                                                minArgs: 1,
+                                                maxArgs: 1
+                                            },
+                                            set: {
+                                                minArgs: 1,
+                                                maxArgs: 1
+                                            }
+                                        }
+                                    },
+                                    tabs: {
+                                        captureVisibleTab: {
+                                            minArgs: 0,
+                                            maxArgs: 2
+                                        },
+                                        create: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        detectLanguage: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        discard: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        duplicate: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        executeScript: {
+                                            minArgs: 1,
+                                            maxArgs: 2
+                                        },
+                                        get: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getCurrent: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        },
+                                        getZoom: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        getZoomSettings: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        goBack: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        goForward: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        highlight: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        insertCSS: {
+                                            minArgs: 1,
+                                            maxArgs: 2
+                                        },
+                                        move: {
+                                            minArgs: 2,
+                                            maxArgs: 2
+                                        },
+                                        query: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        reload: {
+                                            minArgs: 0,
+                                            maxArgs: 2
+                                        },
+                                        remove: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        removeCSS: {
+                                            minArgs: 1,
+                                            maxArgs: 2
+                                        },
+                                        sendMessage: {
+                                            minArgs: 2,
+                                            maxArgs: 3
+                                        },
+                                        setZoom: {
+                                            minArgs: 1,
+                                            maxArgs: 2
+                                        },
+                                        setZoomSettings: {
+                                            minArgs: 1,
+                                            maxArgs: 2
+                                        },
+                                        update: {
+                                            minArgs: 1,
+                                            maxArgs: 2
+                                        }
+                                    },
+                                    topSites: {
+                                        get: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        }
+                                    },
+                                    webNavigation: {
+                                        getAllFrames: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        getFrame: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        }
+                                    },
+                                    webRequest: {
+                                        handlerBehaviorChanged: {
+                                            minArgs: 0,
+                                            maxArgs: 0
+                                        }
+                                    },
+                                    windows: {
+                                        create: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        get: {
+                                            minArgs: 1,
+                                            maxArgs: 2
+                                        },
+                                        getAll: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        getCurrent: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        getLastFocused: {
+                                            minArgs: 0,
+                                            maxArgs: 1
+                                        },
+                                        remove: {
+                                            minArgs: 1,
+                                            maxArgs: 1
+                                        },
+                                        update: {
+                                            minArgs: 2,
+                                            maxArgs: 2
+                                        }
+                                    }
+                                };
+                                if (0 === Object.keys(n).length)
+                                    throw new Error("api-metadata.json has not been included in browser-polyfill");
+                                class t extends WeakMap {
+                                    constructor(e, s=void 0) {
+                                        super(s),
+                                        this.createItem = e
+                                    }
+                                    get(e) {
+                                        return this.has(e) || this.set(e, this.createItem(e)),
+                                        super.get(e)
+                                    }
+                                }
+                                const o = e=>e && "object" == typeof e && "function" == typeof e.then
+                                  , i = (s,r)=>(...n)=>{
+                                    e.runtime.lastError ? s.reject(e.runtime.lastError) : r.singleCallbackArg || n.length <= 1 && !1 !== r.singleCallbackArg ? s.resolve(n[0]) : s.resolve(n)
+                                }
+                                  , a = e=>1 == e ? "argument" : "arguments"
+                                  , g = (e,s)=>function(r, ...n) {
+                                    if (n.length < s.minArgs)
+                                        throw new Error(`Expected at least ${s.minArgs} ${a(s.minArgs)} for ${e}(), got ${n.length}`);
+                                    if (n.length > s.maxArgs)
+                                        throw new Error(`Expected at most ${s.maxArgs} ${a(s.maxArgs)} for ${e}(), got ${n.length}`);
+                                    return new Promise(((t,o)=>{
+                                        if (s.fallbackToNoCallback)
+                                            try {
+                                                r[e](...n, i({
+                                                    resolve: t,
+                                                    reject: o
+                                                }, s))
+                                            } catch (o) {
+                                                console.warn(`${e} API method doesn't seem to support the callback parameter, falling back to call it without a callback: `, o),
+                                                r[e](...n),
+                                                s.fallbackToNoCallback = !1,
+                                                s.noCallback = !0,
+                                                t()
+                                            }
+                                        else
+                                            s.noCallback ? (r[e](...n),
+                                            t()) : r[e](...n, i({
+                                                resolve: t,
+                                                reject: o
+                                            }, s))
+                                    }
+                                    ))
+                                }
+                                  , m = (e,s,r)=>new Proxy(s,{
+                                    apply: (s,n,t)=>r.call(n, e, ...t)
+                                });
+                                let l = Function.call.bind(Object.prototype.hasOwnProperty);
+                                const d = (e,s={},r={})=>{
+                                    let n = Object.create(null)
+                                      , t = {
+                                        has: (s,r)=>r in e || r in n,
+                                        get(t, o, i) {
+                                            if (o in n)
+                                                return n[o];
+                                            if (!(o in e))
+                                                return;
+                                            let a = e[o];
+                                            if ("function" == typeof a)
+                                                if ("function" == typeof s[o])
+                                                    a = m(e, e[o], s[o]);
+                                                else if (l(r, o)) {
+                                                    let s = g(o, r[o]);
+                                                    a = m(e, e[o], s)
+                                                } else
+                                                    a = a.bind(e);
+                                            else if ("object" == typeof a && null !== a && (l(s, o) || l(r, o)))
+                                                a = d(a, s[o], r[o]);
+                                            else {
+                                                if (!l(r, "*"))
+                                                    return Object.defineProperty(n, o, {
+                                                        configurable: !0,
+                                                        enumerable: !0,
+                                                        get: ()=>e[o],
+                                                        set(s) {
+                                                            e[o] = s
+                                                        }
+                                                    }),
+                                                    a;
+                                                a = d(a, s[o], r["*"])
+                                            }
+                                            return n[o] = a,
+                                            a
+                                        },
+                                        set: (s,r,t,o)=>(r in n ? n[r] = t : e[r] = t,
+                                        !0),
+                                        defineProperty: (e,s,r)=>Reflect.defineProperty(n, s, r),
+                                        deleteProperty: (e,s)=>Reflect.deleteProperty(n, s)
+                                    }
+                                      , o = Object.create(e);
+                                    return new Proxy(o,t)
+                                }
+                                  , c = e=>({
+                                    addListener(s, r, ...n) {
+                                        s.addListener(e.get(r), ...n)
+                                    },
+                                    hasListener: (s,r)=>s.hasListener(e.get(r)),
+                                    removeListener(s, r) {
+                                        s.removeListener(e.get(r))
+                                    }
+                                });
+                                let A = !1;
+                                const u = new t((e=>"function" != typeof e ? e : function(s, n, t) {
+                                    let i, a, g = !1, m = new Promise((e=>{
+                                        i = function(s) {
+                                            A || (console.warn(r, (new Error).stack),
+                                            A = !0),
+                                            g = !0,
+                                            e(s)
+                                        }
+                                    }
+                                    ));
+                                    try {
+                                        a = e(s, n, i)
+                                    } catch (e) {
+                                        a = Promise.reject(e)
+                                    }
+                                    const l = !0 !== a && o(a);
+                                    if (!0 !== a && !l && !g)
+                                        return !1;
+                                    const d = e=>{
+                                        e.then((e=>{
+                                            t(e)
+                                        }
+                                        ), (e=>{
+                                            let s;
+                                            s = e && (e instanceof Error || "string" == typeof e.message) ? e.message : "An unexpected error occurred",
+                                            t({
+                                                __mozWebExtensionPolyfillReject__: !0,
+                                                message: s
+                                            })
+                                        }
+                                        )).catch((e=>{
+                                            console.error("Failed to send onMessage rejected reply", e)
+                                        }
+                                        ))
+                                    }
+                                    ;
+                                    return d(l ? a : m),
+                                    !0
+                                }
+                                ))
+                                  , p = ({reject: r, resolve: n},t)=>{
+                                    e.runtime.lastError ? e.runtime.lastError.message === s ? n() : r(e.runtime.lastError) : t && t.__mozWebExtensionPolyfillReject__ ? r(new Error(t.message)) : n(t)
+                                }
+                                  , h = (e,s,r,...n)=>{
+                                    if (n.length < s.minArgs)
+                                        throw new Error(`Expected at least ${s.minArgs} ${a(s.minArgs)} for ${e}(), got ${n.length}`);
+                                    if (n.length > s.maxArgs)
+                                        throw new Error(`Expected at most ${s.maxArgs} ${a(s.maxArgs)} for ${e}(), got ${n.length}`);
+                                    return new Promise(((e,s)=>{
+                                        const t = p.bind(null, {
+                                            resolve: e,
+                                            reject: s
+                                        });
+                                        n.push(t),
+                                        r.sendMessage(...n)
+                                    }
+                                    ))
+                                }
+                                  , f = {
+                                    runtime: {
+                                        onMessage: c(u),
+                                        onMessageExternal: c(u),
+                                        sendMessage: h.bind(null, "sendMessage", {
+                                            minArgs: 1,
+                                            maxArgs: 3
+                                        })
+                                    },
+                                    tabs: {
+                                        sendMessage: h.bind(null, "sendMessage", {
+                                            minArgs: 2,
+                                            maxArgs: 3
+                                        })
+                                    }
+                                }
+                                  , x = {
+                                    clear: {
+                                        minArgs: 1,
+                                        maxArgs: 1
+                                    },
+                                    get: {
+                                        minArgs: 1,
+                                        maxArgs: 1
+                                    },
+                                    set: {
+                                        minArgs: 1,
+                                        maxArgs: 1
+                                    }
+                                };
+                                return n.privacy = {
+                                    network: {
+                                        "*": x
+                                    },
+                                    services: {
+                                        "*": x
+                                    },
+                                    websites: {
+                                        "*": x
+                                    }
+                                },
+                                d(e, f, n)
+                            }
+                            ;
+                            if ("object" != typeof chrome || !chrome || !chrome.runtime || !chrome.runtime.id)
+                                throw new Error("This script should only be loaded in a browser extension.");
+                            e.exports = n(chrome)
+                        } else
+                            e.exports = browser
+                    }(e)
+                }
+                ))
+                  , m = o((function(e, s) {
+                    Object.defineProperty(s, "__esModule", {
+                        value: !0
+                    }),
+                    "undefined" == typeof window ? s.browser = {} : s.browser = g
+                }
+                ))
+                  , l = function() {
+                    for (var e = 0, s = 0, r = arguments.length; s < r; s++)
+                        e += arguments[s].length;
+                    var n = Array(e)
+                      , t = 0;
+                    for (s = 0; s < r; s++)
+                        for (var o = arguments[s], i = 0, a = o.length; i < a; i++,
+                        t++)
+                            n[t] = o[i];
+                    return n
+                }
+                  , d = function(e, s, r) {
+                    this.name = e,
+                    this.version = s,
+                    this.os = r,
+                    this.type = "browser"
+                }
+                  , c = function(e) {
+                    this.version = e,
+                    this.type = "node",
+                    this.name = "node",
+                    this.os = process.platform
+                }
+                  , A = function(e, s, r, n) {
+                    this.name = e,
+                    this.version = s,
+                    this.os = r,
+                    this.bot = n,
+                    this.type = "bot-device"
+                }
+                  , u = function() {
+                    this.type = "bot",
+                    this.bot = !0,
+                    this.name = "bot",
+                    this.version = null,
+                    this.os = null
+                }
+                  , p = function() {
+                    this.type = "react-native",
+                    this.name = "react-native",
+                    this.version = null,
+                    this.os = null
+                }
+                  , h = /(nuhk|Googlebot|Yammybot|Openbot|Slurp|MSNBot|Ask\ Jeeves\/Teoma|ia_archiver)/
+                  , f = 3
+                  , x = [["aol", /AOLShield\/([0-9\._]+)/], ["edge", /Edge\/([0-9\._]+)/], ["edge-ios", /EdgiOS\/([0-9\._]+)/], ["yandexbrowser", /YaBrowser\/([0-9\._]+)/], ["kakaotalk", /KAKAOTALK\s([0-9\.]+)/], ["samsung", /SamsungBrowser\/([0-9\.]+)/], ["silk", /\bSilk\/([0-9._-]+)\b/], ["miui", /MiuiBrowser\/([0-9\.]+)$/], ["beaker", /BeakerBrowser\/([0-9\.]+)/], ["edge-chromium", /EdgA?\/([0-9\.]+)/], ["chromium-webview", /(?!Chrom.*OPR)wv\).*Chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/], ["chrome", /(?!Chrom.*OPR)Chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/], ["phantomjs", /PhantomJS\/([0-9\.]+)(:?\s|$)/], ["crios", /CriOS\/([0-9\.]+)(:?\s|$)/], ["firefox", /Firefox\/([0-9\.]+)(?:\s|$)/], ["fxios", /FxiOS\/([0-9\.]+)/], ["opera-mini", /Opera Mini.*Version\/([0-9\.]+)/], ["opera", /Opera\/([0-9\.]+)(?:\s|$)/], ["opera", /OPR\/([0-9\.]+)(:?\s|$)/], ["ie", /Trident\/7\.0.*rv\:([0-9\.]+).*\).*Gecko$/], ["ie", /MSIE\s([0-9\.]+);.*Trident\/[4-7].0/], ["ie", /MSIE\s(7\.0)/], ["bb10", /BB10;\sTouch.*Version\/([0-9\.]+)/], ["android", /Android\s([0-9\.]+)/], ["ios", /Version\/([0-9\._]+).*Mobile.*Safari.*/], ["safari", /Version\/([0-9\._]+).*Safari/], ["facebook", /FBAV\/([0-9\.]+)/], ["instagram", /Instagram\s([0-9\.]+)/], ["ios-webview", /AppleWebKit\/([0-9\.]+).*Mobile/], ["ios-webview", /AppleWebKit\/([0-9\.]+).*Gecko\)$/], ["searchbot", /alexa|bot|crawl(er|ing)|facebookexternalhit|feedburner|google web preview|nagios|postrank|pingdom|slurp|spider|yahoo!|yandex/]]
+                  , w = [["iOS", /iP(hone|od|ad)/], ["Android OS", /Android/], ["BlackBerry OS", /BlackBerry|BB10/], ["Windows Mobile", /IEMobile/], ["Amazon OS", /Kindle/], ["Windows 3.11", /Win16/], ["Windows 95", /(Windows 95)|(Win95)|(Windows_95)/], ["Windows 98", /(Windows 98)|(Win98)/], ["Windows 2000", /(Windows NT 5.0)|(Windows 2000)/], ["Windows XP", /(Windows NT 5.1)|(Windows XP)/], ["Windows Server 2003", /(Windows NT 5.2)/], ["Windows Vista", /(Windows NT 6.0)/], ["Windows 7", /(Windows NT 6.1)/], ["Windows 8", /(Windows NT 6.2)/], ["Windows 8.1", /(Windows NT 6.3)/], ["Windows 10", /(Windows NT 10.0)/], ["Windows ME", /Windows ME/], ["Open BSD", /OpenBSD/], ["Sun OS", /SunOS/], ["Chrome OS", /CrOS/], ["Linux", /(Linux)|(X11)/], ["Mac OS", /(Mac_PowerPC)|(Macintosh)/], ["QNX", /QNX/], ["BeOS", /BeOS/], ["OS/2", /OS\/2/]];
+                function b(e) {
+                    var s = function(e) {
+                        return "" !== e && x.reduce((function(s, r) {
+                            var n = r[0]
+                              , t = r[1];
+                            if (s)
+                                return s;
+                            var o = t.exec(e);
+                            return !!o && [n, o]
+                        }
+                        ), !1)
+                    }(e);
+                    if (!s)
+                        return null;
+                    var r = s[0]
+                      , n = s[1];
+                    if ("searchbot" === r)
+                        return new u;
+                    var t = n[1] && n[1].split(/[._]/).slice(0, 3);
+                    t ? t.length < f && (t = l(t, function(e) {
+                        for (var s = [], r = 0; r < e; r++)
+                            s.push("0");
+                        return s
+                    }(f - t.length))) : t = [];
+                    var o = t.join(".")
+                      , i = function(e) {
+                        for (var s = 0, r = w.length; s < r; s++) {
+                            var n = w[s]
+                              , t = n[0];
+                            if (n[1].exec(e))
+                                return t
+                        }
+                        return null
+                    }(e)
+                      , a = h.exec(e);
+                    return a && a[1] ? new A(r,o,i,a[1]) : new d(r,o,i)
+                }
+                const v = y ? b(y) : "undefined" == typeof document && "undefined" != typeof navigator && "ReactNative" === navigator.product ? new p : "undefined" != typeof navigator ? b(navigator.userAgent) : "undefined" != typeof process && process.version ? new c(process.version.slice(1)) : null;
+                var y, E = v || {
+                    name: "chrome",
+                    version: "86.0.4240",
+                    os: "Windows 10",
+                    type: "browser"
+                };
+                s.Logger = class {
+                    constructor(e) {
+                        this.moduleName = e
+                    }
+                    log(e, ...s) {
+                        console.log(`%c${i[e].icon} %c${this.moduleName} %c${s.shift()}`, `color: ${i[e].iconColor}; font-weight: bold;`, "color: #222; font-weight: bold", i[e].textStyle, ...s)
+                    }
+                    debug(...e) {
+                        window.WEBEXTER_DEBUG_LEVEL <= a.debug && this.log("debug", ...e)
+                    }
+                    info(...e) {
+                        window.WEBEXTER_DEBUG_LEVEL <= a.info && this.log("info", ...e)
+                    }
+                    success(...e) {
+                        window.WEBEXTER_DEBUG_LEVEL <= a.info && this.log("success", ...e)
+                    }
+                    warn(...e) {
+                        window.WEBEXTER_DEBUG_LEVEL <= a.warning && this.log("warn", ...e)
+                    }
+                    error(...e) {
+                        window.WEBEXTER_DEBUG_LEVEL <= a.error && this.log("error", ...e)
+                    }
+                }
+                ,
+                s.browserInfo = E,
+                s.commonjsGlobal = t,
+                s.commonjsRequire = function(e) {
+                    throw new Error('Could not dynamically require "' + e + '". Please configure the dynamicRequireTargets option of @rollup/plugin-commonjs appropriately for this require call to behave properly.')
+                }
+                ,
+                s.createCommonjsModule = o,
+                s.getAugmentedNamespace = function(e) {
+                    if (e.__esModule)
+                        return e;
+                    var s = Object.defineProperty({}, "__esModule", {
+                        value: !0
+                    });
+                    return Object.keys(e).forEach((function(r) {
+                        var n = Object.getOwnPropertyDescriptor(e, r);
+                        Object.defineProperty(s, r, n.get ? n : {
+                            enumerable: !0,
+                            get: function() {
+                                return e[r]
+                            }
+                        })
+                    }
+                    )),
+                    s
+                }
+                ,
+                s.lib = m,
+                s.setDebugLevel = function(e) {
+                    window.WEBEXTER_DEBUG_LEVEL = a[e]
+                }
+            }
+            ,
+            7447: (e,s,r)=>{
+                var n = r(4858)
+                  , t = r(5769);
+                const o = new n.Logger("Page Communication");
+                s.R5 = n.browserInfo,
+                n.setDebugLevel,
+                s.JY = t.Options,
+                t.WindowCommunication,
+                s.bm = class {
+                    constructor() {
+                        this.listeners = {},
+                        n.lib.browser.runtime.onMessage.addListener(((e,s)=>{
+                            o.debug("Message received.", {
+                                message: e,
+                                sender: s
+                            });
+                            const {messageId: r, data: n} = e;
+                            if (!r)
+                                return void o.debug("Message ID is undefined.", {
+                                    message: e
+                                });
+                            if ("function" != typeof this.listeners[r])
+                                return void o.warn(`Listener for message ID "${r}" not found.`, {
+                                    message: e,
+                                    sender: s
+                                });
+                            const t = (0,
+                            this.listeners[r])(n);
+                            return o.success(`Listener for message ID "${r}" executed.`, {
+                                response: t
+                            }),
+                            Promise.resolve(t)
+                        }
+                        ))
+                    }
+                    on(e, s) {
+                        "function" == typeof this.listeners[e] && o.warn(`Listener for message ID "${e}" already exists, It will be replaced.`),
+                        this.listeners[e] = s,
+                        o.info(`Listener for message ID "${e}" added.`)
+                    }
+                    off(e) {
+                        delete this.listeners[e],
+                        o.info(`Listener for message ID "${e}" removed.`)
+                    }
+                    send(e, s) {
+                        return o.debug(`Sending a message with id "${e}" to a background`, {
+                            data: s
+                        }),
+                        n.lib.browser.runtime.sendMessage({
+                            messageId: e,
+                            data: s
+                        })
+                    }
+                }
+            }
+        }
+          , s = {};
+        function r(n) {
+            var t = s[n];
+            if (void 0 !== t)
+                return t.exports;
+            var o = s[n] = {
+                exports: {}
+            };
+            return e[n](o, o.exports, r),
+            o.exports
+        }
+        r.g = function() {
+            if ("object" == typeof globalThis)
+                return globalThis;
+            try {
+                return this || new Function("return this")()
+            } catch (e) {
+                if ("object" == typeof window)
+                    return window
+            }
+        }();
+        var n = r(7447);
+        const t = {
+            theme: "system",
+            extensionDisplayMode: "full",
+            showDownloadNotifications: !0,
+            embeddedDownloadsEnabled: !0,
+            downloadButtonOnUrlsEnabled: !0,
+            formats: ["mp4", "m4a", "webm"],
+            dashFormats: "none",
+            mp3DefaultBitrate: 128,
+            copyToClipboardButtonEnabled: !0,
+            qrGeneratorButtonEnabled: !0,
+            saveAsDialogEnabled: !1,
+            flixmateEnabled: !0,
+            flixmateFormats: ["mp4", "mkv", "avi"],
+            flixmateUseMultithreading: !0,
+            preferredVideoPlaybackQuality: "disabled",
+            menuOrder: ["dark-mode", "cinema-mode", "pic-in-pic", "float-video", "looper"],
+            hiddenMenuOrder: ["smart-pause", "autoplay", "mousewheel-volume-control", "video-search", "hide-comments", "options"],
+            floatVideoEnabled: !1,
+            smartPauseEnabled: !1,
+            audioModeEnabled: !1,
+            mousewheelVolumeControlEnabled: !1,
+            videoSearchEnabled: !1,
+            hideCommentsEnabled: !1
+        }
+          , o = {
+            mp3FlixmateAlertMinimized: !1,
+            flixmatePromoMinimized: !1
+        };
+        ({
+            browserInfo: n.R5,
+            message: new n.bm,
+            options: (0,
+            n.JY)("__options__", "sync", t),
+            userStorage: (0,
+            n.JY)("__user_storage__", "sync", o)
+        }).message.send("background.content.addoncrop.info").then((e=>{
+            if (!e || e.error || !e.data)
+                return;
+            const s = document.createElement("script");
+            s.textContent = `(() => {\n        window.addoncropExtensions = window.addoncropExtensions || [];\n        window.addoncropExtensions.push({\n            mode: '${e.data.mode}',\n            emulator: '${e.data.emulator}',\n            extension: {\n                id: ${e.data.extension.id},\n                name: '${e.data.extension.name}',\n                version: '${e.data.extension.version}',\n                date: '${e.data.extension.date}',\n            },\n            flixmateConnected: ${e.data.flixmateConnected},\n        });\n    })();`,
+            document.body.appendChild(s)
+        }
+        ))
+    }
+    )();
+}
+)();

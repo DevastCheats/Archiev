@@ -1,0 +1,855 @@
+{
+    "1281893490917244970": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281893506780106782": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281893506780106782",
+            "set_limit": "limit_1281893506780106782",
+            "set_description": "description_1281893506780106782",
+            "close_room": "close_1281893506780106782",
+            "delete_room": "delete_1281893506780106782",
+            "pin_room": "pin_1281893506780106782",
+            "open_room": "open_1281893506780106782",
+            "move_up": "move_1281893506780106782"
+        }
+    },
+    "1281903262894915606": {
+        "leader_id": 698844733954588692,
+        "voice_channel_id": 1281903262894915606,
+        "custom_ids": {
+            "rename_room": "rename_1281903262894915606",
+            "set_limit": "limit_1281903262894915606",
+            "set_description": "description_1281903262894915606",
+            "toggle_room": "toggle_1281903262894915606",
+            "delete_room": "delete_1281903262894915606",
+            "pin_room": "pin_1281903262894915606",
+            "open_room": "open_1281903262894915606",
+            "move_up": "move_1281903262894915606",
+            "kick_user": "kick_1281903262894915606",
+            "assign_leader": "assign_leader_1281903262894915606",
+            "restrict_role": "restrict_role_1281903262894915606"
+        }
+    },
+    "1281904988993486908": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281904997092687927": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281904997092687927",
+            "set_limit": "limit_1281904997092687927",
+            "set_description": "description_1281904997092687927",
+            "close_room": "close_1281904997092687927",
+            "delete_room": "delete_1281904997092687927",
+            "pin_room": "pin_1281904997092687927",
+            "open_room": "open_1281904997092687927",
+            "move_up": "move_1281904997092687927"
+        }
+    },
+    "1281906578768920606": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281906595638411298": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281906595638411298",
+            "set_limit": "limit_1281906595638411298",
+            "set_description": "description_1281906595638411298",
+            "close_room": "close_1281906595638411298",
+            "delete_room": "delete_1281906595638411298",
+            "pin_room": "pin_1281906595638411298",
+            "open_room": "open_1281906595638411298",
+            "move_up": "move_1281906595638411298",
+            "assign_leader": "assign_leader_1281906595638411298",
+            "restrict_role": "restrict_role_1281906595638411298",
+            "kick_member": "kick_member_1281906595638411298"
+        }
+    },
+    "1281909543756107796": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281909553382031462": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281909553382031462",
+            "set_limit": "limit_1281909553382031462",
+            "set_description": "description_1281909553382031462",
+            "close_room": "close_1281909553382031462",
+            "delete_room": "delete_1281909553382031462",
+            "pin_room": "pin_1281909553382031462",
+            "open_room": "open_1281909553382031462",
+            "move_up": "move_1281909553382031462",
+            "assign_leader": "assign_leader_1281909553382031462",
+            "restrict_role": "restrict_role_1281909553382031462",
+            "kick_member": "kick_member_1281909553382031462"
+        }
+    },
+    "1281912041166344205": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281912048065708202": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281912048065708202",
+            "set_limit": "limit_1281912048065708202",
+            "set_description": "description_1281912048065708202",
+            "close_room": "close_1281912048065708202",
+            "delete_room": "delete_1281912048065708202",
+            "pin_room": "pin_1281912048065708202",
+            "open_room": "open_1281912048065708202",
+            "move_up": "move_1281912048065708202",
+            "assign_leader": "assign_leader_1281912048065708202",
+            "restrict_role": "restrict_role_1281912048065708202",
+            "kick_member": "kick_member_1281912048065708202"
+        }
+    },
+    "1281913739825905778": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281913748629749833": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281913748629749833",
+            "set_limit": "limit_1281913748629749833",
+            "set_description": "description_1281913748629749833",
+            "close_room": "close_1281913748629749833",
+            "delete_room": "delete_1281913748629749833",
+            "pin_room": "pin_1281913748629749833",
+            "open_room": "open_1281913748629749833",
+            "move_up": "move_1281913748629749833",
+            "assign_leader": "assign_leader_1281913748629749833",
+            "restrict_role": "restrict_role_1281913748629749833",
+            "kick_member": "kick_member_1281913748629749833"
+        }
+    },
+    "1281914783553028249": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281914789966123031": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281914789966123031",
+            "set_limit": "limit_1281914789966123031",
+            "set_description": "description_1281914789966123031",
+            "close_room": "close_1281914789966123031",
+            "delete_room": "delete_1281914789966123031",
+            "pin_room": "pin_1281914789966123031",
+            "open_room": "open_1281914789966123031",
+            "move_up": "move_1281914789966123031",
+            "assign_leader": "assign_leader_1281914789966123031",
+            "restrict_role": "restrict_role_1281914789966123031",
+            "kick_member": "kick_member_1281914789966123031"
+        }
+    },
+    "1281915848772292660": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281915856275636304": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281915856275636304",
+            "set_limit": "limit_1281915856275636304",
+            "set_description": "description_1281915856275636304",
+            "close_room": "close_1281915856275636304",
+            "delete_room": "delete_1281915856275636304",
+            "pin_room": "pin_1281915856275636304",
+            "open_room": "open_1281915856275636304",
+            "move_up": "move_1281915856275636304",
+            "assign_leader": "assign_leader_1281915856275636304",
+            "restrict_role": "restrict_role_1281915856275636304",
+            "kick_member": "kick_member_1281915856275636304"
+        }
+    },
+    "1281918254280867870": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281918260941557771": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281918260941557771",
+            "set_limit": "limit_1281918260941557771",
+            "set_description": "description_1281918260941557771",
+            "close_room": "close_1281918260941557771",
+            "delete_room": "delete_1281918260941557771",
+            "pin_room": "pin_1281918260941557771",
+            "open_room": "open_1281918260941557771",
+            "move_up": "move_1281918260941557771",
+            "assign_leader": "assign_leader_1281918260941557771",
+            "restrict_role": "restrict_role_1281918260941557771",
+            "kick_member": "kick_member_1281918260941557771"
+        }
+    },
+    "1281918807668949053": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281918815315165215": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281918815315165215",
+            "set_limit": "limit_1281918815315165215",
+            "set_description": "description_1281918815315165215",
+            "close_room": "close_1281918815315165215",
+            "delete_room": "delete_1281918815315165215",
+            "pin_room": "pin_1281918815315165215",
+            "open_room": "open_1281918815315165215",
+            "move_up": "move_1281918815315165215",
+            "assign_leader": "assign_leader_1281918815315165215",
+            "restrict_role": "restrict_role_1281918815315165215",
+            "kick_member": "kick_member_1281918815315165215"
+        }
+    },
+    "1281919281331699772": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281923305439236096": {
+        "leader_id": 698844733954588692,
+        "voice_channel_id": 1281923305439236096,
+        "custom_ids": {
+            "rename_room": "rename_1281923305439236096",
+            "set_limit": "limit_1281923305439236096",
+            "set_description": "description_1281923305439236096",
+            "toggle_room": "toggle_1281923305439236096",
+            "delete_room": "delete_1281923305439236096",
+            "pin_room": "pin_1281923305439236096",
+            "open_room": "open_1281923305439236096",
+            "move_up": "move_1281923305439236096",
+            "kick_user": "kick_1281923305439236096",
+            "assign_leader": "assign_leader_1281923305439236096",
+            "restrict_role": "restrict_role_1281923305439236096"
+        }
+    },
+    "1281923790552563763": {
+        "leader_id": 698844733954588692,
+        "voice_channel_id": 1281923790552563763,
+        "custom_ids": {
+            "rename_room": "rename_1281923790552563763",
+            "set_limit": "limit_1281923790552563763",
+            "set_description": "description_1281923790552563763",
+            "toggle_room": "toggle_1281923790552563763",
+            "delete_room": "delete_1281923790552563763",
+            "pin_room": "pin_1281923790552563763",
+            "open_room": "open_1281923790552563763",
+            "move_up": "move_1281923790552563763",
+            "kick_user": "kick_1281923790552563763",
+            "assign_leader": "assign_leader_1281923790552563763",
+            "restrict_role": "restrict_role_1281923790552563763"
+        }
+    },
+    "1281924105553317983": {
+        "leader_id": 698844733954588692,
+        "voice_channel_id": 1281924105553317983,
+        "custom_ids": {
+            "rename_room": "rename_1281924105553317983",
+            "set_limit": "limit_1281924105553317983",
+            "set_description": "description_1281924105553317983",
+            "toggle_room": "toggle_1281924105553317983",
+            "delete_room": "delete_1281924105553317983",
+            "pin_room": "pin_1281924105553317983",
+            "open_room": "open_1281924105553317983",
+            "move_up": "move_1281924105553317983",
+            "kick_user": "kick_1281924105553317983",
+            "assign_leader": "assign_leader_1281924105553317983",
+            "restrict_role": "restrict_role_1281924105553317983"
+        }
+    },
+    "1281932499307466892": {
+        "leader_id": 698844733954588692,
+        "voice_channel_id": 1281932499307466892,
+        "custom_ids": {
+            "rename_room": "rename_1281932499307466892",
+            "set_limit": "limit_1281932499307466892",
+            "set_description": "description_1281932499307466892",
+            "toggle_room": "toggle_1281932499307466892",
+            "delete_room": "delete_1281932499307466892",
+            "pin_room": "pin_1281932499307466892",
+            "open_room": "open_1281932499307466892",
+            "move_up": "move_1281932499307466892",
+            "kick_user": "kick_1281932499307466892"
+        }
+    },
+    "1281933279871762462": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281933286758678559": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281933286758678559",
+            "set_limit": "limit_1281933286758678559",
+            "set_description": "description_1281933286758678559",
+            "close_room": "close_1281933286758678559",
+            "delete_room": "delete_1281933286758678559",
+            "pin_room": "pin_1281933286758678559",
+            "open_room": "open_1281933286758678559",
+            "move_up": "move_1281933286758678559"
+        }
+    },
+    "1281933954089357364": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281934043994132483": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281934043994132483",
+            "set_limit": "limit_1281934043994132483",
+            "set_description": "description_1281934043994132483",
+            "close_room": "close_1281934043994132483",
+            "delete_room": "delete_1281934043994132483",
+            "pin_room": "pin_1281934043994132483",
+            "open_room": "open_1281934043994132483",
+            "kick_user": "kick_1281934043994132483"
+        }
+    },
+    "1281934658283765903": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281934663392296984": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281934663392296984",
+            "set_limit": "limit_1281934663392296984",
+            "set_description": "description_1281934663392296984",
+            "close_room": "close_1281934663392296984",
+            "delete_room": "delete_1281934663392296984",
+            "pin_room": "pin_1281934663392296984",
+            "open_room": "open_1281934663392296984",
+            "kick_user": "kick_1281934663392296984"
+        }
+    },
+    "1281937837075468288": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281937843609927741": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281937843609927741",
+            "set_limit": "limit_1281937843609927741",
+            "set_description": "description_1281937843609927741",
+            "close_room": "close_1281937843609927741",
+            "delete_room": "delete_1281937843609927741",
+            "pin_room": "pin_1281937843609927741",
+            "open_room": "open_1281937843609927741",
+            "move_up": "move_1281937843609927741"
+        }
+    },
+    "1281939049841430590": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281939058712510488": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281939058712510488",
+            "set_limit": "limit_1281939058712510488",
+            "set_description": "description_1281939058712510488",
+            "close_room": "close_1281939058712510488",
+            "delete_room": "delete_1281939058712510488",
+            "pin_room": "pin_1281939058712510488",
+            "open_room": "open_1281939058712510488",
+            "move_up": "move_1281939058712510488"
+        }
+    },
+    "1281939326996975658": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281939337629667369": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281939337629667369",
+            "set_limit": "limit_1281939337629667369",
+            "set_description": "description_1281939337629667369",
+            "close_room": "close_1281939337629667369",
+            "delete_room": "delete_1281939337629667369",
+            "pin_room": "pin_1281939337629667369",
+            "open_room": "open_1281939337629667369",
+            "kick_user": "kick_1281939337629667369"
+        }
+    },
+    "1281939522363326549": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281939529422475340": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281939529422475340",
+            "set_limit": "limit_1281939529422475340",
+            "set_description": "description_1281939529422475340",
+            "close_room": "close_1281939529422475340",
+            "delete_room": "delete_1281939529422475340",
+            "pin_room": "pin_1281939529422475340",
+            "open_room": "open_1281939529422475340",
+            "kick_user": "kick_1281939529422475340"
+        }
+    },
+    "1281939649794801725": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281939654253219890": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281939654253219890",
+            "set_limit": "limit_1281939654253219890",
+            "set_description": "description_1281939654253219890",
+            "close_room": "close_1281939654253219890",
+            "delete_room": "delete_1281939654253219890",
+            "pin_room": "pin_1281939654253219890",
+            "open_room": "open_1281939654253219890",
+            "kick_user": "kick_1281939654253219890"
+        }
+    },
+    "1281947136912785460": {
+        "owner_id": 698844733954588692,
+        "leader_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281947143418024017": {
+        "owner_id": 698844733954588692,
+        "leader_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {}
+    },
+    "1281947485455257655": {
+        "owner_id": 698844733954588692,
+        "leader_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281947495550947360": {
+        "owner_id": 698844733954588692,
+        "leader_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {}
+    },
+    "1281951365861740544": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281951372618760256": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281951372618760256",
+            "set_limit": "limit_1281951372618760256",
+            "set_description": "description_1281951372618760256",
+            "close_room": "close_1281951372618760256",
+            "delete_room": "delete_1281951372618760256",
+            "pin_room": "pin_1281951372618760256",
+            "open_room": "open_1281951372618760256",
+            "kick_user": "kick_1281951372618760256",
+            "set_leader": "set_leader_1281951372618760256",
+            "restrict_role": "restrict_role_1281951372618760256"
+        }
+    },
+    "1281951827075661939": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281951834071892000": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281951834071892000",
+            "set_limit": "limit_1281951834071892000",
+            "set_description": "description_1281951834071892000",
+            "close_room": "close_1281951834071892000",
+            "delete_room": "delete_1281951834071892000",
+            "pin_room": "pin_1281951834071892000",
+            "open_room": "open_1281951834071892000",
+            "kick_user": "kick_1281951834071892000",
+            "set_leader": "set_leader_1281951834071892000",
+            "restrict_role": "restrict_role_1281951834071892000"
+        }
+    },
+    "1281952294736232448": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281952300776161331": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281952300776161331",
+            "set_limit": "limit_1281952300776161331",
+            "set_description": "description_1281952300776161331",
+            "close_room": "close_1281952300776161331",
+            "delete_room": "delete_1281952300776161331",
+            "pin_room": "pin_1281952300776161331",
+            "open_room": "open_1281952300776161331",
+            "kick_user": "kick_1281952300776161331",
+            "set_leader": "set_leader_1281952300776161331",
+            "restrict_role": "restrict_role_1281952300776161331"
+        }
+    },
+    "1281954102112424068": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281954109448126466": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281954109448126466",
+            "set_limit": "limit_1281954109448126466",
+            "set_description": "description_1281954109448126466",
+            "close_room": "close_1281954109448126466",
+            "delete_room": "delete_1281954109448126466",
+            "pin_room": "pin_1281954109448126466",
+            "open_room": "open_1281954109448126466",
+            "move_up": "move_1281954109448126466"
+        }
+    },
+    "1281956231178616945": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281956310845489153": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281956310845489153",
+            "set_limit": "limit_1281956310845489153",
+            "set_description": "description_1281956310845489153",
+            "close_room": "close_1281956310845489153",
+            "delete_room": "delete_1281956310845489153",
+            "pin_room": "pin_1281956310845489153",
+            "open_room": "open_1281956310845489153",
+            "move_up": "move_1281956310845489153"
+        }
+    },
+    "1281957435778666640": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281957447258476565": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281957447258476565",
+            "set_limit": "limit_1281957447258476565",
+            "set_description": "description_1281957447258476565",
+            "close_room": "close_1281957447258476565",
+            "delete_room": "delete_1281957447258476565",
+            "pin_room": "pin_1281957447258476565",
+            "open_room": "open_1281957447258476565",
+            "move_up": "move_1281957447258476565"
+        }
+    },
+    "1281957962943828030": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281957969382084683": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281957969382084683",
+            "set_limit": "limit_1281957969382084683",
+            "set_description": "description_1281957969382084683",
+            "close_room": "close_1281957969382084683",
+            "delete_room": "delete_1281957969382084683",
+            "pin_room": "pin_1281957969382084683",
+            "open_room": "open_1281957969382084683",
+            "move_up": "move_1281957969382084683"
+        }
+    },
+    "1281959441087860807": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281959446632861789": {
+        "owner_id": 698844733954588692,
+        "type": "private_room"
+    },
+    "1281959502106722334": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281959509304152095": {
+        "owner_id": 698844733954588692,
+        "type": "private_room"
+    },
+    "1281959963559985246": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281959968500617318": {
+        "owner_id": 698844733954588692,
+        "type": "private_room"
+    },
+    "1281959977942122567": {
+        "owner_id": 698844733954588692,
+        "type": "private_room"
+    },
+    "1281959987031179400": {
+        "owner_id": 698844733954588692,
+        "type": "private_room"
+    },
+    "1281960384093360128": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281960794464059525": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281960800910704640": {
+        "owner_id": 698844733954588692,
+        "type": "private_room"
+    },
+    "1281961111712698461": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281961119283413095": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281961119283413095",
+            "set_limit": "limit_1281961119283413095",
+            "set_description": "description_1281961119283413095",
+            "close_room": "close_1281961119283413095",
+            "delete_room": "delete_1281961119283413095",
+            "pin_room": "pin_1281961119283413095",
+            "open_room": "open_1281961119283413095",
+            "move_up": "move_1281961119283413095"
+        }
+    },
+    "1281961917799334011": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281961925277913098": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281961925277913098",
+            "set_limit": "limit_1281961925277913098",
+            "set_description": "description_1281961925277913098",
+            "delete_room": "delete_1281961925277913098",
+            "toggle_room": "toggle_1281961925277913098",
+            "move_up": "move_1281961925277913098",
+            "make_leader": "make_leader_1281961925277913098",
+            "restrict_role": "restrict_role_1281961925277913098",
+            "kick_member": "kick_member_1281961925277913098"
+        }
+    },
+    "1281964613159747618": {
+        "owner_id": 698844733954588692,
+        "type": "create_room"
+    },
+    "1281964621929906259": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "custom_ids": {
+            "rename_room": "rename_1281964621929906259",
+            "set_limit": "limit_1281964621929906259",
+            "set_description": "description_1281964621929906259",
+            "delete_room": "delete_1281964621929906259",
+            "toggle_room": "toggle_1281964621929906259",
+            "move_up": "move_1281964621929906259",
+            "make_leader": "make_leader_1281964621929906259",
+            "restrict_role": "restrict_role_1281964621929906259",
+            "kick_member": "kick_member_1281964621929906259"
+        }
+    },
+    "1281966447572025456": {
+        "leader_id": 698844733954588692,
+        "voice_channel_id": 1281966447572025456,
+        "custom_ids": {
+            "rename_room": "rename_1281966447572025456",
+            "set_limit": "limit_1281966447572025456",
+            "set_description": "description_1281966447572025456",
+            "toggle_room": "toggle_1281966447572025456",
+            "delete_room": "delete_1281966447572025456",
+            "pin_room": "pin_1281966447572025456",
+            "open_room": "open_1281966447572025456",
+            "move_up": "move_1281966447572025456",
+            "kick_user": "kick_1281966447572025456"
+        }
+    },
+    "1282268551897419866": {
+        "owner_id": 698844733954588692,
+        "type": "create_room",
+        "leader_id": 698844733954588692
+    },
+    "1282268560810446881": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "leader_id": 698844733954588692,
+        "custom_ids": {
+            "rename_room": "rename_1282268560810446881",
+            "set_limit": "limit_1282268560810446881",
+            "set_description": "description_1282268560810446881",
+            "toggle_access": "toggle_access_1282268560810446881",
+            "delete_room": "delete_1282268560810446881",
+            "make_leader": "make_leader_1282268560810446881"
+        }
+    },
+    "1282269426523045961": {
+        "owner_id": 698844733954588692,
+        "type": "create_room",
+        "leader_id": 698844733954588692
+    },
+    "1282269434836418593": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "leader_id": 698844733954588692,
+        "custom_ids": {
+            "rename_room": "rename_1282269434836418593",
+            "set_limit": "limit_1282269434836418593",
+            "set_description": "description_1282269434836418593",
+            "toggle_access": "toggle_access_1282269434836418593",
+            "delete_room": "delete_1282269434836418593",
+            "make_leader": "make_leader_1282269434836418593"
+        }
+    },
+    "1282270551380988018": {
+        "owner_id": 698844733954588692,
+        "type": "create_room",
+        "leader_id": 698844733954588692
+    },
+    "1282270740007354429": {
+        "owner_id": 1274129507019915348,
+        "type": "private_room",
+        "leader_id": 1274129507019915348,
+        "custom_ids": {
+            "rename_room": "rename_1282270740007354429",
+            "set_limit": "limit_1282270740007354429",
+            "set_description": "description_1282270740007354429",
+            "toggle_close_open_room": "toggle_close_open_1282270740007354429",
+            "delete_room": "delete_1282270740007354429",
+            "change_leader": "change_leader_1282270740007354429"
+        }
+    },
+    "1282271788893606002": {
+        "owner_id": null,
+        "type": "create_room",
+        "leader_id": null
+    },
+    "1282272127323738133": {
+        "owner_id": 1274129507019915348,
+        "type": "private_room",
+        "leader_id": 1274129507019915348,
+        "custom_ids": {
+            "rename_room": "rename_1282272127323738133",
+            "set_limit": "limit_1282272127323738133",
+            "set_description": "description_1282272127323738133",
+            "toggle_close_open_room": "toggle_close_open_1282272127323738133",
+            "delete_room": "delete_1282272127323738133",
+            "change_leader": "change_leader_1282272127323738133"
+        }
+    },
+    "1282273951589990411": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "leader_id": 698844733954588692,
+        "custom_ids": {
+            "rename_room": "rename_1282273951589990411",
+            "set_limit": "limit_1282273951589990411",
+            "set_description": "description_1282273951589990411",
+            "toggle_close_open_room": "toggle_close_open_1282273951589990411",
+            "delete_room": "delete_1282273951589990411",
+            "change_leader": "change_leader_1282273951589990411"
+        }
+    },
+    "1282279009161576522": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "leader_id": 698844733954588692,
+        "custom_ids": {
+            "rename_room": "rename_1282279009161576522",
+            "set_limit": "limit_1282279009161576522",
+            "set_description": "description_1282279009161576522",
+            "toggle_close_open_room": "toggle_close_open_1282279009161576522",
+            "delete_room": "delete_1282279009161576522",
+            "change_leader": "change_leader_1282279009161576522"
+        }
+    },
+    "1282279787993239634": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "leader_id": 698844733954588692,
+        "custom_ids": {
+            "rename_room": "rename_1282279787993239634",
+            "set_limit": "limit_1282279787993239634",
+            "set_description": "description_1282279787993239634",
+            "toggle_close_open_room": "toggle_close_open_1282279787993239634",
+            "delete_room": "delete_1282279787993239634",
+            "change_leader": "change_leader_1282279787993239634"
+        }
+    },
+    "1282283438652522497": {
+        "owner_id": null,
+        "type": "create_room"
+    },
+    "1282283445325926442": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "leader_id": 698844733954588692
+    },
+    "1282284172337217557": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "leader_id": 698844733954588692
+    },
+    "1282287458146451458": {
+        "owner_id": 1274129507019915348,
+        "type": "private_room",
+        "leader_id": 1274129507019915348
+    },
+    "1282289118268624916": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "leader_id": 698844733954588692
+    },
+    "1282292224369098844": {
+        "owner_id": null,
+        "type": "create_room"
+    },
+    "1282292229523771442": {
+        "owner_id": 698844733954588692,
+        "type": "private_room",
+        "leader_id": 698844733954588692
+    },
+    "1282292622349828149": {
+        "owner_id": 1274129507019915348,
+        "type": "private_room",
+        "leader_id": 1274129507019915348
+    }
+}
