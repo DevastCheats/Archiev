@@ -1,0 +1,586 @@
+2024-09-08 17:45:47 - INFO - logging in using static token
+2024-09-08 17:45:48 - INFO - Shard ID None has connected to Gateway (Session ID: a93f17be04a664ad0a592f6cd0076e47).
+2024-09-08 18:19:32 - INFO - logging in using static token
+2024-09-08 18:19:33 - INFO - Shard ID None has connected to Gateway (Session ID: 4bff631f58b79152648a6660c4de661d).
+2024-09-08 18:45:22 - INFO - logging in using static token
+2024-09-08 18:45:23 - INFO - Shard ID None has connected to Gateway (Session ID: c9ffc74916a3fc283b4e4a1cbca846ed).
+2024-09-08 18:50:56 - INFO - logging in using static token
+2024-09-08 18:50:58 - INFO - Shard ID None has connected to Gateway (Session ID: 26fe3aa9bea56ec7846c1c7d7526a1cc).
+2024-09-08 19:32:16 - INFO - logging in using static token
+2024-09-08 19:32:18 - INFO - Shard ID None has connected to Gateway (Session ID: e1228444e2bd5bdce1c312dc2c02f640).
+2024-09-08 19:36:55 - INFO - logging in using static token
+2024-09-08 19:36:56 - INFO - Shard ID None has connected to Gateway (Session ID: a88457fb5962423248b1f1ef2e7be91b).
+2024-09-08 19:38:43 - INFO - logging in using static token
+2024-09-08 19:38:44 - INFO - Shard ID None has connected to Gateway (Session ID: ec84f71f9bb34ab7ae48e4eb8e65e4be).
+2024-09-08 19:38:48 - ERROR - Ignoring exception in command menu
+Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 79, in menu
+    view = VoiceRoomView(ctx.author.voice.channel.id, True)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'channel'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 85, in menu
+    view = VoiceRoomView(ctx.author.voice.channel.id, True)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'channel'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'channel'
+2024-09-08 19:39:36 - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "create_voice" is not found
+2024-09-08 23:28:35 - INFO - logging in using static token
+2024-09-08 23:28:37 - INFO - Shard ID None has connected to Gateway (Session ID: 48e2d4a1eda7ab6a6a88be163a4940e3).
+2024-09-08 23:28:44 - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "create_voice" is not found
+2024-09-10 21:50:58 - INFO - logging in using static token
+2024-09-10 21:50:59 - INFO - Shard ID None has connected to Gateway (Session ID: d2a3fdc89c8441562e3f9df7fa8337e2).
+2024-09-10 21:51:06 - ERROR - Ignoring exception in command create_voice
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 697, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: member is a required argument that is missing.
+2024-09-10 21:51:33 - INFO - logging in using static token
+2024-09-10 21:51:35 - INFO - Shard ID None has connected to Gateway (Session ID: 72dddb477305d0ce29584f75582602f9).
+2024-09-10 21:51:46 - ERROR - Ignoring exception in command menu
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 212, in create_voice
+    await send_room_menu(member, new_voice_channel)
+                         ^^^^^^
+NameError: name 'member' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'member' is not defined
+2024-09-10 21:52:48 - INFO - logging in using static token
+2024-09-10 21:52:49 - INFO - Shard ID None has connected to Gateway (Session ID: 63c26c2095f1c7050d953dbc0a1053eb).
+2024-09-10 21:52:56 - ERROR - Ignoring exception in command menu
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 212, in create_voice
+    await send_room_menu()
+          ^^^^^^^^^^^^^^^^
+TypeError: send_room_menu() missing 2 required positional arguments: 'member' and 'voice_channel'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: send_room_menu() missing 2 required positional arguments: 'member' and 'voice_channel'
+2024-09-10 21:55:07 - INFO - logging in using static token
+2024-09-10 21:55:08 - INFO - Shard ID None has connected to Gateway (Session ID: 0d73d85c92d30b38f1267f2084c13a52).
+2024-09-10 21:55:30 - ERROR - Ignoring exception in command menu
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 212, in create_voice
+    await send_room_menu()
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 239, in send_room_menu
+    leader_id = voice_channels[voice_channel.id]["leader_id"]
+                               ^^^^^^^^^^^^^
+NameError: name 'voice_channel' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'voice_channel' is not defined
+2024-09-10 22:00:48 - INFO - logging in using static token
+2024-09-10 22:00:51 - INFO - Shard ID None has connected to Gateway (Session ID: dd2033d6185828b2e6d88cc4e70b9c56).
+2024-09-10 22:01:07 - ERROR - Ignoring exception in command menu
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 253, in create_voice
+    await send_room_menu(member, new_voice_channel)
+                         ^^^^^^
+NameError: name 'member' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'member' is not defined
+2024-09-10 22:05:03 - INFO - logging in using static token
+2024-09-10 22:05:04 - INFO - Shard ID None has connected to Gateway (Session ID: 3e8767d98dc89f84f5595f9a9f3a2d79).
+2024-09-10 22:07:37 - INFO - logging in using static token
+2024-09-10 22:07:38 - INFO - Shard ID None has connected to Gateway (Session ID: 2ec0f352790f1596463d66d454299074).
+2024-09-10 22:09:48 - INFO - logging in using static token
+2024-09-10 22:09:49 - INFO - Shard ID None has connected to Gateway (Session ID: 023f304aa8409c69be6de509a8ad1377).
+2024-09-10 22:10:07 - ERROR - Ignoring exception in command menu
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 255, in menu
+    channel_id = ctx.author.voice.channel.id
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'channel'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'channel'
+2024-09-10 22:10:15 - ERROR - Exception occurred: 1073651053314179165
+2024-09-10 22:10:15 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 332, in on_interaction
+    if interaction.user.id == voice_channels[voice_channel_id]["leader_id"]:
+                              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 1073651053314179165
+
+2024-09-10 22:10:18 - ERROR - Exception occurred: 1073651053314179165
+2024-09-10 22:10:18 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 281, in on_interaction
+    if interaction.user.id == voice_channels[voice_channel_id]["leader_id"]:
+                              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 1073651053314179165
+
+2024-09-10 22:13:31 - INFO - logging in using static token
+2024-09-10 22:13:32 - INFO - Shard ID None has connected to Gateway (Session ID: 05e58ab80518f21dca8ef160928635ce).
+2024-09-10 22:13:58 - ERROR - Exception occurred: 'NoneType' object has no attribute 'id'
+2024-09-10 22:13:58 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 138, in on_interaction
+    modal = SetLimitModal(voice_channel.id)
+                          ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+
+2024-09-10 22:14:05 - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "create_voice" is not found
+2024-09-10 22:17:02 - INFO - logging in using static token
+2024-09-10 22:17:03 - INFO - Shard ID None has connected to Gateway (Session ID: 42b2062b5377a253de88805c2997502e).
+2024-09-10 22:17:13 - ERROR - Ignoring exception in command menu
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 254, in menu
+    view = VoiceRoomView(is_leader=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: VoiceRoomView.__init__() missing 1 required positional argument: 'channel_id'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: VoiceRoomView.__init__() missing 1 required positional argument: 'channel_id'
+2024-09-10 22:20:51 - ERROR - Ignoring exception in command menu
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 254, in menu
+    view = VoiceRoomView(is_leader=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: VoiceRoomView.__init__() missing 1 required positional argument: 'channel_id'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: VoiceRoomView.__init__() missing 1 required positional argument: 'channel_id'
+2024-09-10 22:21:54 - INFO - logging in using static token
+2024-09-10 22:21:56 - INFO - Shard ID None has connected to Gateway (Session ID: 8cf8741f95f1c31ea1311bd1434ee33c).
+2024-09-10 22:22:11 - ERROR - Exception occurred: 1073651053314179165
+2024-09-10 22:22:11 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 279, in on_interaction
+    if interaction.user.id == voice_channels[voice_channel_id]["leader_id"]:
+                              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 1073651053314179165
+
+2024-09-10 22:22:15 - ERROR - Exception occurred: 1073651053314179165
+2024-09-10 22:22:15 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 285, in on_interaction
+    if interaction.user.id == voice_channels[voice_channel_id]["leader_id"]:
+                              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 1073651053314179165
+
+2024-09-10 22:24:27 - INFO - logging in using static token
+2024-09-10 22:24:28 - INFO - Shard ID None has connected to Gateway (Session ID: 163b411292ea4163b3472e7545a0ddeb).
+2024-09-10 22:24:50 - ERROR - Exception occurred: 1073651053314179165
+2024-09-10 22:24:50 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 283, in on_interaction
+    if interaction.user.id == voice_channels[voice_channel_id]["leader_id"]:
+                              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 1073651053314179165
+
+2024-09-10 22:29:03 - INFO - logging in using static token
+2024-09-10 22:29:05 - INFO - Shard ID None has connected to Gateway (Session ID: b1f5bb54283bd94fc90119a0afcbcf14).
+2024-09-10 22:32:46 - INFO - logging in using static token
+2024-09-10 22:32:47 - INFO - Shard ID None has connected to Gateway (Session ID: 6eec2844d660a5135bb33323aa2f9a0b).
+2024-09-10 22:34:33 - INFO - logging in using static token
+2024-09-10 22:34:34 - INFO - Shard ID None has connected to Gateway (Session ID: c87085b332e61d9f645cb08dcea7b351).
+2024-09-10 22:35:41 - INFO - logging in using static token
+2024-09-10 22:35:42 - INFO - Shard ID None has connected to Gateway (Session ID: ab4233d6a13287efe400b77032d15804).
+2024-09-10 22:37:03 - INFO - logging in using static token
+2024-09-10 22:37:04 - INFO - Shard ID None has connected to Gateway (Session ID: f3948681403d7b87b45175748abcab82).
+2024-09-10 22:38:37 - INFO - logging in using static token
+2024-09-10 22:38:38 - INFO - Shard ID None has connected to Gateway (Session ID: fc7dde10d1933fb40830668be10c0b4e).
+2024-09-10 22:41:34 - INFO - logging in using static token
+2024-09-10 22:41:35 - INFO - Shard ID None has connected to Gateway (Session ID: 9fc1659d1b0074b2b7bdacee2bf965df).
+2024-09-10 22:44:19 - ERROR - Ignoring exception in command create_voice
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 925, in prepare
+    if not await self.can_run(ctx):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1288, in can_run
+    return await discord.utils.async_all(predicate(ctx) for predicate in predicates)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\utils.py", line 704, in async_all
+    for elem in gen:
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1288, in <genexpr>
+    return await discord.utils.async_all(predicate(ctx) for predicate in predicates)
+                                         ^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 2210, in predicate
+    raise MissingPermissions(missing)
+discord.ext.commands.errors.MissingPermissions: You are missing Administrator permission(s) to run this command.
+2024-09-10 22:44:54 - INFO - logging in using static token
+2024-09-10 22:44:55 - INFO - Shard ID None has connected to Gateway (Session ID: 796e11f5a71f8e0ef8dd22ade991d11b).
+2024-09-10 22:45:01 - ERROR - Ignoring exception in command menu
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 925, in prepare
+    if not await self.can_run(ctx):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1288, in can_run
+    return await discord.utils.async_all(predicate(ctx) for predicate in predicates)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\utils.py", line 704, in async_all
+    for elem in gen:
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1288, in <genexpr>
+    return await discord.utils.async_all(predicate(ctx) for predicate in predicates)
+                                         ^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 2210, in predicate
+    raise MissingPermissions(missing)
+discord.ext.commands.errors.MissingPermissions: You are missing Administrator permission(s) to run this command.
+2024-09-10 23:17:11 - INFO - logging in using static token
+2024-09-10 23:17:12 - INFO - Shard ID None has connected to Gateway (Session ID: 74d005685843a9b8e64d3d73c5e5095d).
+2024-09-11 11:13:16 - INFO - logging in using static token
+2024-09-11 11:13:23 - INFO - Shard ID None has connected to Gateway (Session ID: 8f90527607baa9877a138de06bf92706).
+2024-09-11 11:13:33 - INFO - logging in using static token
+2024-09-11 11:13:34 - INFO - Shard ID None has connected to Gateway (Session ID: b21ae9b9723bf30dacb8867852a2b698).
+2024-09-11 11:14:05 - INFO - logging in using static token
+2024-09-11 11:14:06 - INFO - Shard ID None has connected to Gateway (Session ID: f8199344ddb5db233c49116b2d18da9b).
+2024-09-11 11:29:33 - INFO - Shard ID None has successfully RESUMED session f8199344ddb5db233c49116b2d18da9b.
+2024-09-11 19:25:20 - INFO - logging in using static token
+2024-09-11 19:25:22 - INFO - Shard ID None has connected to Gateway (Session ID: 6e4fa8b36ce11a76e57571a9f29b059f).
+2024-09-11 20:04:05 - INFO - logging in using static token
+2024-09-11 20:04:07 - INFO - Shard ID None has connected to Gateway (Session ID: 5d060482cd97ed53cf831ccd4b929cfe).
+2024-09-11 20:04:49 - INFO - logging in using static token
+2024-09-11 20:04:50 - INFO - Shard ID None has connected to Gateway (Session ID: 7189f347933a5bf96c596a04cd3783db).
+2024-09-11 20:43:08 - ERROR - Exception occurred: 1073651053314179165
+2024-09-11 20:43:08 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 165, in callback
+    if interaction.user.id == voice_channels[self.channel_id]["leader_id"]:
+                              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 1073651053314179165
+
+2024-09-11 20:57:13 - INFO - logging in using static token
+2024-09-11 20:57:14 - INFO - Shard ID None has connected to Gateway (Session ID: 654ef450e8754ee6f556323ad51685ef).
+2024-09-11 20:58:18 - ERROR - Exception occurred: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+2024-09-11 20:58:18 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 290, in on_interaction
+    await interaction.response.send_message("Вы не являетесь лидером ни одной комнаты или данные о канале отсутствуют.", ephemeral=True)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 855, in send_message
+    await adapter.create_interaction_response(
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\webhook\async_.py", line 223, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+
+2024-09-11 20:58:18 - ERROR - Ignoring exception in on_interaction
+Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 290, in on_interaction
+    await interaction.response.send_message("Вы не являетесь лидером ни одной комнаты или данные о канале отсутствуют.", ephemeral=True)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 855, in send_message
+    await adapter.create_interaction_response(
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\webhook\async_.py", line 223, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 449, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 407, in on_interaction
+    await interaction.response.send_message("Произошла ошибка.", ephemeral=True)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 827, in send_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
+2024-09-11 20:58:54 - ERROR - Exception occurred: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+2024-09-11 20:58:54 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 290, in on_interaction
+    await interaction.response.send_message("Вы не являетесь лидером ни одной комнаты или данные о канале отсутствуют.", ephemeral=True)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 855, in send_message
+    await adapter.create_interaction_response(
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\webhook\async_.py", line 223, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+
+2024-09-11 20:58:54 - ERROR - Ignoring exception in on_interaction
+Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 290, in on_interaction
+    await interaction.response.send_message("Вы не являетесь лидером ни одной комнаты или данные о канале отсутствуют.", ephemeral=True)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 855, in send_message
+    await adapter.create_interaction_response(
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\webhook\async_.py", line 223, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 449, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 407, in on_interaction
+    await interaction.response.send_message("Произошла ошибка.", ephemeral=True)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 827, in send_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
+2024-09-12 20:09:37 - INFO - logging in using static token
+2024-09-12 20:09:38 - INFO - Shard ID None has connected to Gateway (Session ID: 6b8ce2c1fcece022d0e43e1d87f152fb).
+2024-09-12 20:11:12 - INFO - logging in using static token
+2024-09-12 20:11:13 - INFO - Shard ID None has connected to Gateway (Session ID: be4102641dcc219832a21f2741d7a777).
+2024-09-12 20:11:26 - ERROR - Ignoring exception in command menu
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 278, in menu
+    await ctx.send(embed=embed, view=view)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\context.py", line 1039, in send
+    return await super().send(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1618, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 758, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In components.0.components.0.emoji.name: Invalid emoji
+In components.0.components.1.emoji.name: Invalid emoji
+In components.0.components.2.emoji.name: Invalid emoji
+In components.0.components.3.emoji.name: Invalid emoji
+In components.0.components.4.emoji.name: Invalid emoji
+In components.1.components.0.emoji.name: Invalid emoji
+In components.1.components.1.emoji.name: Invalid emoji
+In components.1.components.2.emoji.name: Invalid emoji
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In components.0.components.0.emoji.name: Invalid emoji
+In components.0.components.1.emoji.name: Invalid emoji
+In components.0.components.2.emoji.name: Invalid emoji
+In components.0.components.3.emoji.name: Invalid emoji
+In components.0.components.4.emoji.name: Invalid emoji
+In components.1.components.0.emoji.name: Invalid emoji
+In components.1.components.1.emoji.name: Invalid emoji
+In components.1.components.2.emoji.name: Invalid emoji
+2024-09-12 20:12:01 - INFO - logging in using static token
+2024-09-12 20:12:02 - INFO - Shard ID None has connected to Gateway (Session ID: b7c0249c15b2f33b804089284068a6e6).
+2024-09-12 20:13:03 - INFO - logging in using static token
+2024-09-12 20:13:05 - INFO - Shard ID None has connected to Gateway (Session ID: e71154889da8ccf6dce60f1ddadd7f2a).
+2024-09-12 20:22:37 - INFO - logging in using static token
+2024-09-12 20:22:39 - INFO - Shard ID None has connected to Gateway (Session ID: 8872714b53bc9bd3ea8f4e1fdf778dcb).
+2024-09-12 20:23:26 - ERROR - Exception occurred: name 'voice_channel_info' is not defined
+2024-09-12 20:23:26 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 248, in on_voice_state_update
+    if len(before.channel.members) == 1 and voice_channel_info["type"] == "private_room":
+                                            ^^^^^^^^^^^^^^^^^^
+NameError: name 'voice_channel_info' is not defined
+
+2024-09-12 20:27:40 - INFO - logging in using static token
+2024-09-12 20:27:43 - INFO - Shard ID None has connected to Gateway (Session ID: ea540b768e6416ed398a5c698095f9f6).
+2024-09-12 20:28:11 - ERROR - Exception occurred: 'NoneType' object has no attribute 'members'
+2024-09-12 20:28:11 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 229, in on_voice_state_update
+    if len(before.channel.members) == 1 and voice_channel_info["type"] == "private_room":
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'members'
+
+2024-09-12 20:30:55 - INFO - logging in using static token
+2024-09-12 20:30:56 - INFO - Shard ID None has connected to Gateway (Session ID: c72fb7e4725d09063b1d6ff7fc5926d2).
+2024-09-12 20:39:32 - INFO - logging in using static token
+2024-09-12 20:39:33 - INFO - Shard ID None has connected to Gateway (Session ID: 04828090aaf38b475928fa91f4e1ecdc).
+2024-09-12 20:39:36 - ERROR - Exception occurred: name 'channel_id' is not defined
+2024-09-12 20:39:36 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 227, in on_voice_state_update
+    self.channel_id = channel_id
+                      ^^^^^^^^^^
+NameError: name 'channel_id' is not defined
+
+2024-09-12 20:39:38 - ERROR - Exception occurred: name 'channel_id' is not defined
+2024-09-12 20:39:38 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 227, in on_voice_state_update
+    self.channel_id = channel_id
+                      ^^^^^^^^^^
+NameError: name 'channel_id' is not defined
+
+2024-09-12 20:40:02 - INFO - logging in using static token
+2024-09-12 20:40:03 - INFO - Shard ID None has connected to Gateway (Session ID: b801a01558361e32e477c95aa85c3f38).
+2024-09-13 19:07:46 - INFO - logging in using static token
+2024-09-13 19:07:47 - INFO - Shard ID None has connected to Gateway (Session ID: 153c361a095404ac4617f56d38be7602).
+2024-09-13 19:08:04 - ERROR - Exception occurred: name 'member' is not defined
+2024-09-13 19:08:04 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 159, in callback
+    await voice_channel.set_permissions(member, connect=True)
+                                        ^^^^^^
+NameError: name 'member' is not defined
+
+2024-09-13 19:08:04 - ERROR - Ignoring exception in view <View timeout=180.0 children=1> for item <RoleSelectMenu placeholder='Выберите роль для предоставления доступа' min_values=1 max_values=1 disabled=False>
+Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 159, in callback
+    await voice_channel.set_permissions(member, connect=True)
+                                        ^^^^^^
+NameError: name 'member' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ui\view.py", line 430, in _scheduled_task
+    await item.callback(interaction)
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 166, in callback
+    await interaction.response.send_message("Произошла ошибка при предоставлении доступа роли.", ephemeral=True)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 827, in send_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
+2024-09-13 19:27:58 - INFO - logging in using static token
+2024-09-13 19:27:59 - INFO - Shard ID None has connected to Gateway (Session ID: 8bf5f910eecbd79b9fa43b795f522b66).
+2024-09-13 19:28:21 - ERROR - Exception occurred: name 'member' is not defined
+2024-09-13 19:28:21 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 159, in callback
+    await voice_channel.set_permissions(member, connect=True)
+                                        ^^^^^^
+NameError: name 'member' is not defined
+
+2024-09-13 19:28:21 - ERROR - Ignoring exception in view <View timeout=180.0 children=1> for item <RoleSelectMenu placeholder='Выберите роль для предоставления доступа' min_values=1 max_values=1 disabled=False>
+Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 159, in callback
+    await voice_channel.set_permissions(member, connect=True)
+                                        ^^^^^^
+NameError: name 'member' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ui\view.py", line 430, in _scheduled_task
+    await item.callback(interaction)
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 166, in callback
+    await interaction.response.send_message("Произошла ошибка при предоставлении доступа роли.", ephemeral=True)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 827, in send_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
+2024-09-13 19:28:25 - ERROR - Exception occurred: name 'member' is not defined
+2024-09-13 19:28:25 - ERROR - Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 159, in callback
+    await voice_channel.set_permissions(member, connect=True)
+                                        ^^^^^^
+NameError: name 'member' is not defined
+
+2024-09-13 19:28:25 - ERROR - Ignoring exception in view <View timeout=180.0 children=1> for item <RoleSelectMenu placeholder='Выберите роль для предоставления доступа' min_values=1 max_values=1 disabled=False>
+Traceback (most recent call last):
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 159, in callback
+    await voice_channel.set_permissions(member, connect=True)
+                                        ^^^^^^
+NameError: name 'member' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ui\view.py", line 430, in _scheduled_task
+    await item.callback(interaction)
+  File "C:\Users\slava\OneDrive\Рабочий стол\13.py", line 166, in callback
+    await interaction.response.send_message("Произошла ошибка при предоставлении доступа роли.", ephemeral=True)
+  File "C:\Users\slava\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 827, in send_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
